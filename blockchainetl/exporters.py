@@ -133,7 +133,7 @@ class CsvItemExporter(BaseItemExporter):
                 if self._headers_not_written:
                     self._write_headers_and_set_fields_to_export(item)
                     self._headers_not_written = False
-        print(item)
+        #print(item)
         fields = self._get_serialized_fields(item, default_value='',
                                              include_empty=True)
         values = list(self._build_row(x for _, x in fields))
