@@ -29,7 +29,7 @@ from thetaetl.cli.export_contracts import export_contracts
 # from thetaetl.cli.export_receipts_and_logs import export_receipts_and_logs
 # from thetaetl.cli.export_token_transfers import export_token_transfers
 # from thetaetl.cli.export_tokens import export_tokens
-# from thetaetl.cli.export_traces import export_traces
+from thetaetl.cli.export_traces import export_traces
 from thetaetl.cli.extract_contracts import extract_contracts
 from thetaetl.cli.extract_csv_column import extract_csv_column
 # from thetaetl.cli.extract_field import extract_field
