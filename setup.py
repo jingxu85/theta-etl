@@ -11,7 +11,7 @@ long_description = read('README.md') if os.path.isfile("README.md") else ""
 
 setup(
     name='theta-etl',
-    version='0.1.5',
+    version='0.1.6',
     author='Thetalabs',
     author_email='jing@thetalabs.org',
     description='Tools for exporting Theta blockchain data to CSV or JSON',

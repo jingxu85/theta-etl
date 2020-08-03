@@ -24,9 +24,11 @@
 import click
 
 from datetime import datetime
+from web3 import Web3
 
 from blockchainetl.file_utils import smart_open
 from blockchainetl.logging_utils import logging_basic_config
+from thetaetl.service.theta_service import ThetaService
 from thetaetl.providers.auto import get_provider_from_uri
 from thetaetl.utils import check_classic_provider_uri
 
@@ -45,10 +47,10 @@ def get_block_range_for_date(provider_uri, date, output, chain='ethereum'):
     """Outputs start and end blocks for given date."""
     provider_uri = check_classic_provider_uri(chain, provider_uri)
     provider = get_provider_from_uri(provider_uri)
-    # web3 = Web3(provider)
-    # eth_service = EthService(web3)
+    web3 = Web3(provider)
+    theta_service = ThetaService(web3)
 
-    # start_block, end_block = eth_service.get_block_range_for_date(date)
+    start_block, end_block = theta_service.get_block_range_for_date(date)
 
-    # with smart_open(output, 'w') as output_file:
-    #     output_file.write('{},{}\n'.format(start_block, end_block))
+    with smart_open(output, 'w') as output_file:
+        output_file.write('{},{}\n'.format(start_block, end_block))
